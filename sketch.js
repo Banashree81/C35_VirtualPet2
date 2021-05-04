@@ -1,4 +1,4 @@
-var dog, happyDog, database, foodS=0, foodStock, feedBtn, addFoodBtn;
+var dog, happyDog, database, foodS, foodStock, feedBtn, addFoodBtn;
 
 var fedTimeRef, lastFedTime;
 
@@ -34,7 +34,6 @@ function setup() {
 
 
 	foodObj = new Food();
-	
 
 	feedBtn = createButton('Feed the Dog');
 	feedBtn.position(600,30);
@@ -55,13 +54,15 @@ function draw() {
  
   background(46, 139, 87);
 
+	
+   
   if(foodS === 0){
 	dog.addImage(dogImg);
   }
 
   if(foodS){	
 	
-		//foodObj.foodStock = foodS ;
+		foodObj.foodStock = foodS ;
 		foodObj.display();	
 
 		textSize(20);
@@ -84,6 +85,7 @@ function draw() {
   
  
   drawSprites();
+  text(mouseX+ " "+mouseY, mouseX, mouseY)
  
 }
 
